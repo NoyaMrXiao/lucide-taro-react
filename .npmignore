@@ -1,0 +1,30 @@
+# Source files
+src/
+*.ts
+*.tsx
+!*.d.ts
+
+# Config files
+tsconfig.json
+tsconfig.esm.json
+.gitignore
+.npmignore
+
+# Development files
+.vscode/
+.idea/
+*.md
+!README.md
+
+# Testing
+test/
+tests/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Build config
+*.config.js
+*.config.ts
+
