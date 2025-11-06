@@ -49,29 +49,32 @@ import { Search } from 'lucide-taro-react'
 
 ### 自定义创建图标
 
+如果需要从 SVG 字符串创建自定义图标：
+
 ```tsx
 import { createLucideIcon } from 'lucide-taro-react'
-import { CustomIcon } from 'lucide-static'
 
-const MyIcon = createLucideIcon(CustomIcon, 'MyIcon')
+const svgString = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>'
+const MyIcon = createLucideIcon(svgString, 'MyIcon')
 
 <MyIcon size={24} color="#000" />
 ```
 
 ### 批量创建图标
 
+如果需要批量创建自定义图标：
+
 ```tsx
 import { createLucideIcons } from 'lucide-taro-react'
-import { Search, Home, User } from 'lucide-static'
 
 const Icons = createLucideIcons({
-  Search,
-  Home,
-  User,
+  CustomIcon1: '<svg>...</svg>',
+  CustomIcon2: '<svg>...</svg>',
+  CustomIcon3: '<svg>...</svg>',
 })
 
-<Icons.Search size={24} />
-<Icons.Home size={32} color="#ff0000" />
+<Icons.CustomIcon1 size={24} />
+<Icons.CustomIcon2 size={32} color="#ff0000" />
 ```
 
 ## Props
@@ -89,16 +92,17 @@ const Icons = createLucideIcons({
 - **尺寸**: `w-4`, `w-5`, `w-6`, `w-8`, `w-10`, `w-12`, `w-16` 或对应的 `h-*` 类名
 - **颜色**: `text-*` 类名（如 `text-red-500`, `text-blue-600`, `text-primary-500` 等）
 
-## 动态访问图标
+## 查看所有可用图标
 
-如果需要使用未导出的图标，可以使用 `Icons` 对象：
+所有图标都可以直接导入使用。如果需要查看所有可用的图标名称：
 
 ```tsx
-import { Icons } from 'lucide-taro-react'
+import { iconNames } from 'lucide-taro-react'
 
-<Icons.Trash size={24} />
-<Icons.Edit className="w-6 h-6 text-blue-500" />
+console.log(iconNames) // ['AArrowDown', 'AArrowUp', 'Search', ...]
 ```
+
+所有图标都支持 tree-shaking，只导入使用的图标会被打包。
 
 ## Development
 
@@ -125,7 +129,7 @@ npm link lucide-taro-react
 ## 更多信息
 
 - 查看 [USAGE.md](./USAGE.md) 了解详细的使用指南
-- 查看 [lucide-static](https://www.npmjs.com/package/lucide-static) 了解可用的图标列表
+- 查看 [Lucide Icons](https://lucide.dev/icons/) 了解所有可用的图标
 
 ## License
 
