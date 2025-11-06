@@ -5,7 +5,14 @@ Lucide icons for Taro React - 为 Taro 框架封装的 Lucide 图标库
 ## Installation
 
 ```bash
+# 使用 npm
 npm install lucide-taro-react
+
+# 使用 yarn
+yarn add lucide-taro-react
+
+# 使用 pnpm
+pnpm add lucide-taro-react
 ```
 
 ## Usage

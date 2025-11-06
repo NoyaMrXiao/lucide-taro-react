@@ -1,6 +1,6 @@
 {
   "name": "lucide-taro-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lucide icons for Taro React",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -16,7 +16,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "generate:icons": "tsx scripts/generate-icons.ts",
+    "build": "npm run generate:icons && tsup",
     "dev": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
@@ -30,12 +31,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/lucide-taro-react.git"
+    "url": "https://github.com/NoyaMrXiao/lucide-taro-react.git"
   },
   "bugs": {
     "url": "https://github.com/your-username/lucide-taro-react/issues"
   },
-  "homepage": "https://github.com/your-username/lucide-taro-react#readme",
+  "homepage": "https://github.com/NoyaMrXiao/lucide-taro-react#readme",
   "peerDependencies": {
     "@tarojs/components": "^3.0.0",
     "@tarojs/runtime": "^3.0.0",
@@ -47,8 +48,5 @@
     "tsup": "^8.0.0",
     "tsx": "^4.7.0",
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "lucide-static": "^0.552.0"
   }
 }

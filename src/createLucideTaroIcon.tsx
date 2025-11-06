@@ -160,18 +160,18 @@ export interface LucideIconProps extends Omit<ImageProps, 'src'> {
 }
 
 /**
- * 将 lucide-static 图标转换为小程序可用的组件
+ * 将 SVG 字符串转换为小程序可用的图标组件
  * 
- * @param iconSvg lucide-static 导出的 SVG 字符串
+ * @param iconSvg SVG 字符串
  * @param displayName 组件显示名称（用于调试）
  * @returns 小程序可用的图标组件
  * 
  * @example
  * ```tsx
- * import { Search } from 'lucide-static'
  * import { createLucideIcon } from 'lucide-taro-react'
  * 
- * const SearchIcon = createLucideIcon(Search, 'Search')
+ * const svgString = '<svg>...</svg>'
+ * const SearchIcon = createLucideIcon(svgString, 'Search')
  * 
  * // 使用
  * <SearchIcon size={24} color="#000" />
@@ -253,13 +253,12 @@ export function createLucideIcon(
  * 
  * @example
  * ```tsx
- * import { Search, Home, User } from 'lucide-static'
  * import { createLucideIcons } from 'lucide-taro-react'
  * 
  * const Icons = createLucideIcons({
- *   Search,
- *   Home,
- *   User,
+ *   Search: '<svg>...</svg>',
+ *   Home: '<svg>...</svg>',
+ *   User: '<svg>...</svg>',
  * })
  * 
  * // 使用
